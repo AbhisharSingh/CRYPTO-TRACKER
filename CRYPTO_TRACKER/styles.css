@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #000;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.container {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Center-align the crypto list */
+.crypto-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Crypto card styling with dynamic colors */
+.crypto {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    color: #fff;
+}
+
+/* Different background colors for variety */
+.crypto:nth-child(1) { background: #ff9f43; }
+.crypto:nth-child(2) { background: #f368e0; }
+.crypto:nth-child(3) { background: #ff6b6b; }
+.crypto:nth-child(4) { background: #48dbfb; }
+.crypto:nth-child(5) { background: #1dd1a1; }
+.crypto:nth-child(6) { background: #ff4757; }
+.crypto:nth-child(7) { background: #576574; }
+.crypto:nth-child(8) { background: #2ed573; }
+.crypto:nth-child(9) { background: #a29bfe; }
+.crypto:nth-child(10) { background: #eccc68; }
+
+.crypto h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.price-change {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+}
+
+/* Centered search bar */
+.search-bar {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    width: 300px;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Dark mode toggle */
+.dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Bigger Crypto Converter */
+.converter {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.converter input, .converter select {
+    margin: 0.5rem 0;
+    padding: 0.7rem;
+    width: 90%;
+    font-size: 1.1rem;
+}
+
+.converter button {
+    padding: 0.7rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* Dark mode adjustments */
+.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-mode .crypto {
+    border-color: #555;
+}
+
+.dark-mode header {
+    background-color: #000;
+}
+
+
+
