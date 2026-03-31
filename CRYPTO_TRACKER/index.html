@@ -3,35 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Tracker</title>
+    <title>Crypto Tracker Pro</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Crypto Currency Tracker</h1>
-    </header>
-    <button class="dark-mode-toggle">Toggle Dark Mode</button>
-    <div class="container">
-        <div class="search-bar">
-            <input type="text" id="search" placeholder="Search cryptocurrencies...">
-            <button id="sort-price">Sort by Price</button>
-            <button id="sort-market-cap">Sort by Market Cap</button>
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">Market Intelligence</p>
+            <h1>Crypto Tracker Pro</h1>
+            <p class="subtitle">Real-time prices, portfolio watchlists, and conversion tools.</p>
         </div>
-        <div id="crypto-list" class="crypto-list"></div>
-        <section class="favorites">
-            <h2>Favorites</h2>
-            <div id="favorites-list" class="crypto-list"></div>
+        <div class="topbar-actions">
+            <button class="dark-mode-toggle" type="button">Toggle Theme</button>
+            <button id="refresh-data" type="button">Refresh Data</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="controls card">
+            <div class="control-row">
+                <input type="text" id="search" placeholder="Search by name or symbol..." aria-label="Search cryptocurrencies">
+                <select id="currency-selector" aria-label="Fiat currency selector">
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                    <option value="gbp">GBP</option>
+                    <option value="inr">INR</option>
+                </select>
+                <button id="sort-price" type="button">Sort by Price</button>
+                <button id="sort-market-cap" type="button">Sort by Market Cap</button>
+            </div>
+            <div class="status-row">
+                <p id="api-status">Status: Loading market data...</p>
+                <p id="last-updated">Last updated: --</p>
+            </div>
         </section>
-        <section class="converter">
-            <h2>Crypto Converter</h2>
-            <select id="from-crypto"></select>
-            <select id="to-crypto"></select>
-            <input type="number" id="amount" placeholder="Enter amount" min="1">
-            <button onclick="convertCrypto()">Convert</button>
-            <p id="conversion-result"></p>
+
+        <section class="dashboard-grid">
+            <article class="card">
+                <h2>Top 20 Assets</h2>
+                <div id="crypto-list" class="crypto-list"></div>
+            </article>
+
+            <article class="card">
+                <h2>Top Movers (24h)</h2>
+                <ul id="top-movers" class="movers-list"></ul>
+            </article>
         </section>
-    </div>
+
+        <section class="dashboard-grid">
+            <article class="favorites card">
+                <h2>Favorites Watchlist</h2>
+                <div id="favorites-list" class="crypto-list compact"></div>
+            </article>
+
+            <article class="converter card">
+                <h2>Crypto Converter</h2>
+                <select id="from-crypto"></select>
+                <select id="to-crypto"></select>
+                <input type="number" id="amount" placeholder="Enter amount" min="0" step="any">
+                <button id="convert-btn" type="button">Convert</button>
+                <p id="conversion-result"></p>
+            </article>
+        </section>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
-
